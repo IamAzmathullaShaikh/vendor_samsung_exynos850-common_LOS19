@@ -191,6 +191,7 @@ PRODUCT_PACKAGES += \
     libkeymaster_helper \
     libsec-ril-dsds \
     libsec-ril \
+    libsec2lsi_conversion \
     libskeymaster4device \
     libvkmanager_vendor \
     libwrappergps \
