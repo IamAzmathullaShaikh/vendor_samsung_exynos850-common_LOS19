@@ -56,6 +56,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/MCD_NACHO_slog.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/MCD_NACHO_slog.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/SoundBoosterParam.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/SoundBoosterParam.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/abox_tplg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/abox_tplg.bin \
+    vendor/samsung/exynos850-common/proprietary/vendor/firmware/abox_tplg.conf:$(TARGET_COPY_OUT_VENDOR)/firmware/abox_tplg.conf \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/aw8896_cfg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/aw8896_cfg.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/aw8896_fw_d.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/aw8896_fw_d.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/aw8896_fw_e.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/aw8896_fw_e.bin \
@@ -78,6 +79,10 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/setfile_gc5035.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_gc5035.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/setfile_gm2.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_gm2.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/setfile_sr846.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_sr846.bin \
+    vendor/samsung/exynos850-common/proprietary/vendor/firmware/tdnr_GC02M1.json:$(TARGET_COPY_OUT_VENDOR)/firmware/tdnr_GC02M1.json \
+    vendor/samsung/exynos850-common/proprietary/vendor/firmware/tdnr_GC5035.json:$(TARGET_COPY_OUT_VENDOR)/firmware/tdnr_GC5035.json \
+    vendor/samsung/exynos850-common/proprietary/vendor/firmware/tdnr_S5KGM2.json:$(TARGET_COPY_OUT_VENDOR)/firmware/tdnr_S5KGM2.json \
+    vendor/samsung/exynos850-common/proprietary/vendor/firmware/tdnr_SR846.json:$(TARGET_COPY_OUT_VENDOR)/firmware/tdnr_SR846.json \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/txse1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/txse1.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/firmware/txse2.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/txse2.bin \
     vendor/samsung/exynos850-common/proprietary/vendor/tee/00000000-0000-0000-0000-00000000dead:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-00000000dead \
