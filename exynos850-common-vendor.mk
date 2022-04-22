@@ -128,6 +128,7 @@ PRODUCT_PACKAGES += \
     libepicoperator \
     libexynoscamera3 \
     libexynoscamera_plugin \
+    libexynoscamera_tdnr_plugin \
     libexynosdisplay \
     libexynosgraphicbuffer \
     libexynosgscaler \
@@ -139,6 +140,7 @@ PRODUCT_PACKAGES += \
     libgiantmscl \
     libhwjpeg \
     libion_exynos \
+    libmfb \
     libqfp_sensortest \
     libremosaic_wrapper \
     libril_sem \
