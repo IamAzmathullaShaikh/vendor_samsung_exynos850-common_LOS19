@@ -4,6 +4,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter **** FILL IN ALL DEVICE NAMES, SPACE DELIMITED ****,$(TARGET_DEVICE)),)
+ifneq ($(filter m12,$(TARGET_DEVICE)),)
 
 endif
