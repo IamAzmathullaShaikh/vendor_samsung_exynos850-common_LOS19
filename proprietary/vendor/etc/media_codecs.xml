@@ -78,6 +78,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <MediaCodecs>
+    <Include href="media_codecs_google_telephony.xml" />
     <Settings>
         <Setting name="supports-multiple-secure-codecs" value="true" />
         <Setting name="supports-secure-with-non-secure-codec" value="true" />
@@ -90,23 +91,28 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Exynos.mpeg4.dec" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="2048x2048" />
+            <Limit name="size" min="32x32" max="2048x2048" />  <!-- 1920x1080, 30fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-16384" />
             <Limit name="blocks-per-second" min="1" max="244800" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="30" />
             <Limit name="concurrent-instances" max="16" />
             <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.h263.dec" type="video/3gpp" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="2048x1152" />
+            <Limit name="size" min="32x32" max="2048x1152" />  <!-- 1920x1080, 30fps -->
             <Limit name="alignment" value="4x4" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-9216" />
             <Limit name="blocks-per-second" min="1" max="244800" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="30" />
             <Limit name="concurrent-instances" max="16" />
             <Feature name="adaptive-playback" />
@@ -114,64 +120,79 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Exynos.avc.dec" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="size" min="32x32" max="8192x8192" />  <!-- 1920x1088, 60fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-262144" />
             <Limit name="blocks-per-second" min="1" max="489600" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="60" />
             <Limit name="concurrent-instances" max="16" />
             <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.avc.dec.secure" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="size" min="32x32" max="8192x8192" />  <!-- 1920x1088, 60fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-262144" />
             <Limit name="blocks-per-second" min="1" max="489600" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="60" />
             <Limit name="concurrent-instances" max="2" />
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.vp8.dec" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="size" min="32x32" max="8192x8192" />  <!-- 1920x1080, 30fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="block-count" range="1-262144" />
+            <Limit name="blocks-per-second" min="1" max="243000" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="30" />
             <Limit name="concurrent-instances" max="16" />
             <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.hevc.dec" type="video/hevc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="size" min="64x64" max="8192x8192" />  <!-- 1920x1088, 60fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-262144" />
             <Limit name="blocks-per-second" min="1" max="489600" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="60" />
             <Limit name="concurrent-instances" max="16" />
             <Feature name="adaptive-playback" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.hevc.dec.secure" type="video/hevc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="size" min="64x64" max="8192x8192" />  <!-- 1920x1088, 60fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-262144" />
             <Limit name="blocks-per-second" min="1" max="489600" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="60" />
             <Limit name="concurrent-instances" max="2" />
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.vc1.dec" >
             <Quirk name="requires-allocate-on-input-ports" />
@@ -203,66 +224,80 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Exynos.AVC.Encoder" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="size" min="32x32" max="8192x8192" />  <!-- 1920x1088, 60fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-262144" />
             <Limit name="blocks-per-second" min="1" max="489600" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="60" />
             <Limit name="concurrent-instances" max="16" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.H263.Encoder" type="video/3gpp" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="2048x1152" />
+            <Limit name="size" min="32x32" max="2048x1152" />  <!-- 1920x1080, 30fps -->
             <Limit name="alignment" value="4x4" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="block-count" range="1-9216" />
+            <Limit name="blocks-per-second" min="1" max="243000" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="30" />
             <Limit name="concurrent-instances" max="16" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.MPEG4.Encoder" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="2048x2048" />
+            <Limit name="size" min="32x32" max="2048x2048" />  <!-- 1920x1080, 30fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="block-count" range="1-16384" />
+            <Limit name="blocks-per-second" min="1" max="243000" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="30" />
             <Limit name="concurrent-instances" max="16" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.VP8.Encoder" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="size" min="32x32" max="3840x2160" />  <!-- 1920x1080, 30fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="block-count" range="1-32400" />
+            <Limit name="blocks-per-second" min="1" max="243000" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="30" />
             <Limit name="concurrent-instances" max="16" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="OMX.Exynos.HEVC.Encoder" type="video/hevc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="size" min="64x64" max="8192x8192" />  <!-- 1920x1088, 60fps -->
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="32x32" />
+            <Limit name="block-count" range="1-65536" />
             <Limit name="blocks-per-second" min="1" max="122400" />
             <Limit name="bitrate" range="1-20000000" />
+            <!-- performance point : size[SD, HD, FHD, UHD], fps[24, 25, 30, 50, 60, 120, 200, 240] -->
             <Limit name="performance-point-1920x1080" range="60" />
             <Limit name="concurrent-instances" max="16" />
+            <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <!-- temp fix for android.media.cts.HeifWriterTest#testInputSurface_NoGrid_Handler -->
         <MediaCodec name="c2.android.hevc.encoder" type="video/hevc" update="true" >
-            <!-- profiles and levels:  ProfileMain : MainTierLevel3 -->
-            <Limit name="size" min="2x2" max="960x544" />
+            <!-- profiles and levels:  ProfileMain : MainTierLevel51 -->
+            <Limit name="size" min="2x2" max="512x512" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="8x8" />
-            <Limit name="block-count" range="1-8160" /> <!-- max 960x544 -->
-            <Limit name="blocks-per-second" range="1-244880" />
+            <Limit name="block-count" range="1-4096" /> <!-- max 512x512 -->
+            <Limit name="blocks-per-second" range="1-122880" />
             <Limit name="frame-rate" range="1-120" />
             <Limit name="bitrate" range="1-10000000" />
             <Limit name="complexity" range="0-10"  default="0" />
@@ -270,7 +305,4 @@ Only the three quirks included above are recognized at this point:
             <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
         </MediaCodec>
     </Encoders>
-    <Include href="media_codecs_google_video_le.xml" />
-    <Include href="media_codecs_google_audio.xml" />
-    <Include href="media_codecs_google_telephony.xml" />
 </MediaCodecs>
