@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
     sensors.inputvirtual \
     sensors.sensorhub \
     libaudioeffectoffload \
+    vendor.samsung.hardware.thermal@1.0 \
     audio.primary.exynos850 \
     libSamsungPostProcessConvertor \
     lib_SamsungRec_07010 \
@@ -173,6 +174,7 @@ PRODUCT_PACKAGES += \
     libaboxpcmdump \
     libalsautils_sec \
     libaudio-ril \
+    libaudioparamupdate \
     libaudioproxy \
     libdatamod \
     liblastaboxmsg \
@@ -193,6 +195,7 @@ PRODUCT_PACKAGES += \
     libskeymaster4device \
     libvkmanager_vendor \
     libwrappergps \
+    vendor.samsung.hardware.gnss@2.0 \
     vendor.samsung.hardware.gnss@2.1 \
     vendor.samsung.hardware.radio.bridge@2.0 \
     vendor.samsung.hardware.radio.bridge@2.1 \
