@@ -113,7 +113,6 @@ PRODUCT_PACKAGES += \
     camera.exynos850 \
     gatekeeper.exynos850 \
     hwcomposer.exynos850 \
-    memtrack.exynos850 \
     vulkan.mali \
     libExynosHWCService \
     libExynosOMX_Core \
